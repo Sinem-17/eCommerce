@@ -1,0 +1,92 @@
+﻿@model FooterVM
+<section class="footer-section">
+    <div class="container">
+        <div class="footer-logo text-center">
+            <a href="index.html"><img src="/img/logo-light.png" alt=""></a>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-sm-6">
+                <div class="footer-widget about-widget">
+                    <h2>About</h2>
+                    <p>Donec vitae purus nunc. Morbi faucibus erat sit amet congue mattis. Nullam frin-gilla faucibus urna, id dapibus erat iaculis ut. Integer ac sem.</p>
+                    <img src="img/cards.png" alt="">
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="footer-widget about-widget">
+                    <h2>Questions</h2>
+                    <ul>
+                        <li><a href="">About Us</a></li>
+                        <li><a href="">İletişim</a></li>
+                        <li><a href="">Blog</a></li>
+                    </ul>
+                    
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="footer-widget about-widget">
+                    <h2>Questions</h2>
+                    <div class="fw-latest-post-widget">
+                        <div class="lp-item">
+                            <div class="lp-thumb set-bg" data-setbg="img/blog-thumbs/1.jpg"></div>
+                            <div class="lp-content">
+                                <h6>what shoes to wear</h6>
+                                <span>Oct 21, 2018</span>
+                                <a href="#" class="readmore">Read More</a>
+                            </div>
+                        </div>
+                        <div class="lp-item">
+                            <div class="lp-thumb set-bg" data-setbg="img/blog-thumbs/2.jpg"></div>
+                            <div class="lp-content">
+                                <h6>trends this year</h6>
+                                <span>Oct 21, 2018</span>
+                                <a href="#" class="readmore">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="footer-widget contact-widget">
+                    <h2>Questions</h2>
+                    <div class="con-info">
+                        <span>Firma</span>
+                        <p>@Model.Contact.Info1</p>
+                    </div>
+                    <div class="con-info">
+                        <span>Adres</span>
+                        <p>@Model.Contact.Info2</p>
+                    </div>
+                    <div class="con-info">
+                        <span>Telefon</span>
+                        <p>@Model.Contact.Info3</p>
+                    </div>
+                    <div class="con-info">
+                        <span>Mail</span>
+                        <p>@Model.Contact.Info4</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="social-links-warp">
+        <div class="container">
+            <div class="social-links">
+                <a href="@Model.Social.Info3" target="_blank" rel="nofollow" class="instagram"><i class="fa fa-instagram"></i><span>instagram</span></a>
+                <a href="@Model.Social.Info1" target="_blank" rel="nofollow" class="facebook"><i class="fa fa-facebook"></i><span>facebook</span></a>
+                <a href="@Model.Social.Info2" target="_blank" rel="nofollow" class="twitter"><i class="fa fa-twitter"></i><span>twitter</span></a>
+                <a href="@Model.Social.Info4" target="_blank" rel="nofollow" class="youtube"><i class="fa fa-youtube"></i><span>youtube</span></a>
+                <a href="@Model.Social.Info5" target="_blank" rel="nofollow" class="linkedin"><i class="fa fa-linkedin"></i><span>linkedin</span></a>
+              
+            </div>
+
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            <p class="text-white text-center mt-5">
+                Copyright &copy;
+                <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib --- Downloaded from <a href="https://themeslab.org/" target="_blank">Themeslab</a></a>
+            </p>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+
+        </div>
+    </div>
+</section>

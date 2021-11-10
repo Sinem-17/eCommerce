@@ -1,0 +1,116 @@
+﻿@model ContactVM
+<!-- Page info -->
+<div class="page-top-info">
+    <div class="container">
+        <h4>Bize Ulaşın</h4>
+        <div class="site-pagination">
+            <a href="">Ana Sayfa</a> /
+            <a asp-controller="Contact" asp-action="Index">İletişim</a>
+        </div>
+    </div>
+</div>
+<!-- Page info end -->
+<!-- Contact section -->
+<section class="contact-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 contact-info">
+                <h3>İletişim Bilgileri</h3>
+                <p>@Model.Contact.Info2</p>
+                <p>@Model.Contact.Info3</p>
+                <p>@Model.Contact.Info4</p>
+                <div class="contact-social">
+                    <a href="@Model.Social.Info3" target="_blank" rel="nofollow"><i class="fa fa-instagram"></i></a>
+                    <a href="@Model.Social.Info1" target="_blank" rel="nofollow"><i class="fa fa-facebook"></i></a>
+                    <a href="@Model.Social.Info2" target="_blank" rel="nofollow"><i class="fa fa-twitter"></i></a>
+                    <a href="@Model.Social.Info4" target="_blank" rel="nofollow"><i class="fa fa-youtube"></i></a>
+                    <a href="@Model.Social.Info5" target="_blank" rel="nofollow"><i class="fa fa-linkedin"></i></a>
+
+                </div>
+                <form class="contact-form" asp-controller="Contact" asp-action="Index" method="post">
+                    <input asp-for="@Model.ContactForm.Name" placeholder="Adınız">
+                    <input asp-for="@Model.ContactForm.Surname" placeholder="Soyadınız">
+                    <input asp-for="@Model.ContactForm.Phone" placeholder="İrtibat Numaranız">
+                    <input asp-for="@Model.ContactForm.MailAddress" placeholder="Mail Adresiniz">
+                    <input asp-for="@Model.ContactForm.Subject" placeholder="Konu?">
+                    <textarea asp-for="@Model.ContactForm.Message" placeholder="Mesajınız"></textarea>
+                    <button class="site-btn">GÖNDER</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="map">@Html.Raw(Model.Contact.Info6)</div>
+</section>
+<!-- Contact section end -->
+<!-- Related product section -->
+<section class="related-product-section spad">
+    <div class="container">
+        <div class="section-title">
+            <h2>Your Favorites</h2>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-sm-6">
+                <div class="product-item">
+                    <div class="pi-pic">
+                        <div class="tag-new">New</div>
+                        <img src="./img/product/2.jpg" alt="">
+                        <div class="pi-links">
+                            <a href="#" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a>
+                            <a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
+                        </div>
+                    </div>
+                    <div class="pi-text">
+                        <h6>$35,00</h6>
+                        <p>Black and White Stripes Dress</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="product-item">
+                    <div class="pi-pic">
+                        <img src="./img/product/5.jpg" alt="">
+                        <div class="pi-links">
+                            <a href="#" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a>
+                            <a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
+                        </div>
+                    </div>
+                    <div class="pi-text">
+                        <h6>$35,00</h6>
+                        <p>Flamboyant Pink Top </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="product-item">
+                    <div class="pi-pic">
+                        <img src="./img/product/9.jpg" alt="">
+                        <div class="pi-links">
+                            <a href="#" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a>
+                            <a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
+                        </div>
+                    </div>
+                    <div class="pi-text">
+                        <h6>$35,00</h6>
+                        <p>Flamboyant Pink Top </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="product-item">
+                    <div class="pi-pic">
+                        <img src="./img/product/1.jpg" alt="">
+                        <div class="pi-links">
+                            <a href="#" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a>
+                            <a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
+                        </div>
+                    </div>
+                    <div class="pi-text">
+                        <h6>$35,00</h6>
+                        <p>Flamboyant Pink Top </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Related product section end -->

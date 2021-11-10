@@ -1,0 +1,103 @@
+﻿@model CartCheckoutVM
+<!-- Page info -->
+<div class="page-top-info">
+    <div class="container">
+        <h4>ALIŞVERİŞ SEPETİM</h4>
+        <div class="site-pagination">
+            <a href="/">Anasayfa</a> /
+            <a asp-controller="Cart" asp-action="Index">Alışveriş Sepetim</a>
+        </div>
+    </div>
+</div>
+<!-- Page info end -->
+<!-- checkout section  -->
+<section class="checkout-section spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 order-2 order-lg-1">
+                <form class="checkout-form" asp-controller="Cart" asp-action="Checkout" method="post">
+                    <input asp-for="@Model.Orders.CargoPrice" class="CargoPrice" type="hidden" value="0">
+                    <div class="cf-title">Fatura Adresi</div>
+                    <div class="row">
+                        <div class="col-md-7">
+                            <p>Fatura Bilgileri</p>
+                        </div>
+
+                    </div>
+                    <div class="row address-inputs">
+                        <div class="col-md-12">
+                            <input asp-for="@Model.Orders.Address" placeholder="Address">
+                        </div>
+                        <div class="col-md-4">
+                            <input asp-for="@Model.Orders.Country" placeholder="Teslimat Ülkesi">
+                        </div>
+                        <div class="col-md-4">
+                            <input asp-for="@Model.Orders.City" placeholder="Teslimat Şehiri">
+                        </div>
+                        <div class="col-md-4">
+                            <input asp-for="@Model.Orders.PostalCode" placeholder="Posta Kodu">
+                        </div>
+                        <div class="col-md-6">
+                            <input asp-for="@Model.Orders.MailAddress" placeholder="Mail Adresi">
+                        </div>
+                        <div class="col-md-6">
+                            <input asp-for="@Model.Orders.Phone" placeholder="Telefon">
+                        </div>
+
+                    </div>
+                    <div class="cf-title">Teslimat Bilgileri</div>
+                    <div class="row shipping-btns">
+                        <div class="col-6">
+                            <h4>1 Haftada teslim</h4>
+                        </div>
+                        <div class="col-6">
+                            <div class="cf-radio-btns">
+                                <div class="cfr-item">
+                                    <input type="radio" name="shipping" id="ship-1" price="0" class="cargoRadio" checked>
+                                    <label for="ship-1">Ücretsiz Kargo</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <h4>Hemen Teslim</h4>
+                        </div>
+                        <div class="col-6">
+                            <div class="cf-radio-btns">
+                                <div class="cfr-item">
+                                    <input type="radio" name="shipping" id="ship-2" price="10" class="cargoRadio">
+                                    <label for="ship-2">10 TL</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cf-title">Ödeme Seçenekleri</div>
+                    <select asp-for="@Model.Orders.PaymentOption" asp-items="Html.GetEnumSelectList<EPaymentOptions>()">
+                    </select>
+                    <button class="site-btn submit-order-btn">Siparişi Tamamla</button>
+                </form>
+            </div>
+            <div class="col-lg-4 order-1 order-lg-2">
+                <div class="checkout-cart">
+                    <h3>Sepetim</h3>
+                    <ul class="product-list">
+                        @foreach (Cart c in Model.Carts)
+                        {
+                            <li>
+                                <div class="pl-thumb"> <img src="@c.ProductPicture" alt="@c.ProductName"></div>
+                                <h6>@c.ProductName</h6>
+                                <p>@c.ProductPrice.ToString("#,#.00") TL</p>
+                            </li>
+
+                        }
+                    </ul>
+                    <ul class="price-list">
+                        <li>Sepet Tutarı<span class="sepetTutar" price="@Model.Carts.Sum(s => s.Quantity * s.ProductPrice).ToString("#,#.00") ">@Model.Carts.Sum(s => s.Quantity * s.ProductPrice).ToString("#,#.00") TL</span></li>
+                        <li>Kargo Ücreti<span class="kargoUcreti"></span></li>
+                        <li class="total">Toplam<span class="toplamUcret">@Model.Carts.Sum(s => s.Quantity * s.ProductPrice).ToString("#,#.00") TL</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- checkout section end -->
